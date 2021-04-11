@@ -10,8 +10,8 @@
 // library that provides frames and overlays.
 //
  
-#define OLED_SDA                                    D1          // pin 14
-#define OLED_SDC                                    D2          // pin 12
+#define OLED_SDA                                    0          // pin 0
+#define OLED_SDC                                    2          // pin 2
 #define OLED_ADDR                                   0x3C
 
 SSD1306          display(OLED_ADDR, OLED_SDA, OLED_SDC);        // For I2C
@@ -33,7 +33,7 @@ SSD1306          display(OLED_ADDR, OLED_SDA, OLED_SDC);        // For I2C
 #define CAL_SPACING_Y_5_ROWS                        10
 
 #define CAL_FEBRUARY                                2
-#define CAL_SHOW_6_ROWS_OF_DAYS                     false
+#define CAL_SHOW_6_ROWS_OF_DAYS                     true
 #define CAL_SHOW_MONTH_YEAR                         true
 
 #define CAL_HIGHLIGHT_CURRENT_DAY            
@@ -59,7 +59,7 @@ void setup() {
 
   Serial.begin(115200);
     
-  setTime(12, 0, 0, 16, 3, 2016); 
+  setTime(12, 0, 0, 11, 4, 2021); 
   display.init();
   display.displayOn();
   renderDate(now());
@@ -234,4 +234,3 @@ void renderDate(time_t timeT) {
   display.display();
   
 }
-
